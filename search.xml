@@ -42,6 +42,99 @@
       </tags>
   </entry>
   <entry>
+    <title>macbookpro使用技巧</title>
+    <url>/posts/2366fd10.html</url>
+    <content><![CDATA[<h2 id="1-mac的隐藏功能"><a href="#1-mac的隐藏功能" class="headerlink" title="1.mac的隐藏功能"></a>1.mac的隐藏功能</h2><ul>
+<li><p>直观听到音量的渐变声音: shfit+音量键</p>
+</li>
+<li><p>声音或者亮度1/4的变化：shfit+option+音量键/亮度建</p>
+</li>
+<li><p>聊天打字快速调出emoj动画：command+control+空格</p>
+</li>
+<li><p>切换显示已关闭或者最小化的窗口：command+tab同时摁下option</p>
+</li>
+<li><p>隐藏当前窗口的程序：command+H</p>
+<ul>
+<li>区分关闭和隐藏的代码(开启后隐藏的图标呈现半透明状态)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock showhidden -bool TRUE; killall Dock</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关闭的代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock showhidden -bool FALSE; killall Dock</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>command+tab选中图标后摁下Q是关闭程序</p>
+</li>
+</ul>
+<h2 id="2-mac中常用软件"><a href="#2-mac中常用软件" class="headerlink" title="2. mac中常用软件"></a>2. mac中常用软件</h2><h2 id="3-mac的高效使用"><a href="#3-mac的高效使用" class="headerlink" title="3.mac的高效使用"></a>3.mac的高效使用</h2><ul>
+<li><p>一位数密码：pwpolicy -clearaccountpolicies  需要在终端执行此命令</p>
+</li>
+<li><p>更改搜索这台mac为搜索此文件夹</p>
+<p>访达—偏好设置—高级—执行搜索选择搜索但前文件夹</p>
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get21swmawj30la0m8gw3.jpg" style="zoom:50%;" />
+
+<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get22t0o27j30lg0leqau.jpg" style="zoom:50%;" />
+</li>
+<li><p>打开程序的偏好设置： command+,</p>
+</li>
+<li><p>手动添加打开系统偏好设置的快捷键</p>
+<p>系统偏好设置—键盘—快捷键—APP快捷键—点击“+”，应用程序选择所有应用程序，菜单标题改为“系统偏好设置…”,快捷键中输入自己熟悉的快捷键就OK—点击添加</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2c3wzzdj30ue0ns4ca.jpg" alt=""></p>
+<ul>
+<li>全局开启访达<ol>
+<li>打开自动操作</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2lrvz89j31xk0kk7nk.jpg" alt=""></p>
+<ol start="2">
+<li>点击新建文稿</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2ny6jayj31as0pkn9h.jpg" alt=""></p>
+<ol start="2">
+<li>快速操作</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2old69wj31jm0u0kjl.jpg" alt=""></p>
+<ol start="3">
+<li>点击实用工具，将开启应用程序拖拽到右边</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2r1n9e8j31jo0m01bx.jpg" alt=""></p>
+<ol start="4">
+<li><p>工作流程收到选择：没有输入</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2swslhhj31io0ca46c.jpg" alt=""></p>
+</li>
+<li><p>选择新建变量—系统—资源库—coreservices—访达</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get2wqu7o0j316y0u0qv5.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get31lzelkj318w0p2as3.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get32azve5j30z40cq46w.jpg" alt=""></p>
+</li>
+</ul>
+<ol start="6">
+<li><p>点击这里可以测试是否配置正确，然后存储</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get33dggnij31js0k6nfj.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get35y97f7j319q0mm1kx.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get36sw1rjj317m0e0tkl.jpg" alt=""></p>
+</li>
+<li><p>快捷键定义</p>
+<p>通过系统偏好设置—键盘—快捷键—服务—通用—全局开启访达</p>
+<p>![image-20200515135133428](/Users/wangyufei/Library/Application Support/typora-user-images/image-20200515135133428.png)</p>
+</li>
+<li><p>在全局开启访达后边点击设置快捷键，我这里设置的是command+option+空格</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1get3gr7xbaj30k20f8tc5.jpg" alt=""></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网络在在线传输工具 --- 奶牛快传</title>
     <url>/posts/994d00c4.html</url>
     <content><![CDATA[<h2 id="1-奶牛快传"><a href="#1-奶牛快传" class="headerlink" title="1.奶牛快传"></a>1.<a href="https://cowtransfer.com/" target="_blank" rel="noopener">奶牛快传</a></h2><h3 id="1-1-免费超快的传文件工具"><a href="#1-1-免费超快的传文件工具" class="headerlink" title="1.1 免费超快的传文件工具"></a>1.1 免费超快的传文件工具</h3><p>奶牛快传是一款免费、无需注册即可直接使用的网页端大文件临时传输网盘服务。它提供了网页版、微信小程序、IOS以及安卓端。无论是办公文档、照片、还是电影视频通通都能轻松分享。</p>
