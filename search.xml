@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
+    <title>sqlserver数据库还原单表数据操作</title>
     <url>/posts/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>在系统数据和数据库数据备份或者升级的时候，我们总是全量的备份应用或者数据。在升级完成使用一段时间后突然间发现某张表的数据有问题，此时在全部的还原数据库的数据则不太合理，那如何只还原出现问题的这张表的数据呢？</p>
+<p>首先，我们需要将升级时全量备份的数据库还原成一个新的数据库，如何还原一个新的数据库，此处不在赘述，网上有好多。自我感觉还是参考<a href="https://docs.microsoft.com/zh-cn/sql/relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server?view=sql-server-ver15" target="_blank" rel="noopener">sqlserver官方的还原说明</a>或者参考<a href="https://www.jianshu.com/p/a153c20a577d?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">SQL Server从BAK文件还原到新数据库</a></p>
+<p>之后，我们选择刚刚还原完成的数据库使用如下的命令将ecology.dbo.hrmresource 所有的数据导入到demo.dbo.hrmresource_Test中<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxhysb3zj31hx0u0n7s.jpg" alt=""></p>
+<p>选中刚刚还原的数据库，执行如下的sql语句，执行完成后刷新可以看到demo中已经出现了需要还原的表单数据</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">into</span> demo.dbo.hrmresource_test <span class="keyword">From</span> ecology.dbo.hrmresource</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxkucf1wj319e0u0x5l.jpg" alt=""></p>
+<p>两张表单对比,我这里的表单中没有数据，但是可以看到需要还原的demo库中对应的表单结构已经有了</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxp4rmjgj318s0u01kx.jpg" alt="ecology"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxr7mbkxj31670u01kx.jpg" alt="demo库"></p>
+<p>最后，我们使用下列命令将原来的表进行删除，并把HtmlLabelInfo_Test 重命名为HtmlLabelInfo</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">//删除原有的表单,此处我的里边没有对用的表单,就没有执行这一步</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [dbo].[Hrmresource]</span><br><span class="line">//表单重命名,或者在ssms操作工具中直接在actionsetting_test上摁下F2进行表单重命名</span><br><span class="line">EXEC sp_rename <span class="string">'Hrmresource_test'</span>,<span class="string">'Hrmresource'</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>或者是在navicat中可以直接右键选择重命名，对表单的名称进行更改</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxs79m9wj30w20u07wh.jpg" alt=""></p>
+<p>至此,在全量备份的情况下即可还原某一张表的数据。</p>
 ]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>sqlserver</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>油猴(Tampermonkey)常用脚本</title>
+    <url>/posts/44e1e43b.html</url>
+    <content><![CDATA[<h2 id="1-什么是油猴"><a href="#1-什么是油猴" class="headerlink" title="1.什么是油猴"></a>1.什么是油猴</h2><p>从英文翻译而来-Tampermonkey是一个捐赠软件用户脚本管理器，可用作浏览器扩展。该软件使用户能够添加和使用用户脚本，这些脚本是可用于修改网页的JavaScript程序</p>
+<h2 id="2-油猴下载地址"><a href="#2-油猴下载地址" class="headerlink" title="2.油猴下载地址"></a>2.油猴下载地址</h2><ul>
+<li><a href="https://www.tampermonkey.net/" target="_blank" rel="noopener">官网下载</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">谷歌商店</a><h2 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h2><h3 id="3-1-批量下载网页图片-Picviewer-CE"><a href="#3-1-批量下载网页图片-Picviewer-CE" class="headerlink" title="3.1 批量下载网页图片 - Picviewer CE+"></a>3.1 批量下载网页图片 - Picviewer CE+</h3><a href="https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce" target="_blank" rel="noopener">Picviewer CE+</a> 是一款浏览器油猴脚本，可以将包含很多图片的网页变成图片浏览器，还能对图片进行翻转、旋转、放大，显示原始大图、收藏、批量保存，聚合所有分页大图，图片在线编辑等操作</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>油猴</tag>
+        <tag>Tampermonkey</tag>
+      </tags>
   </entry>
   <entry>
     <title>网络在在线传输工具 --- 奶牛快传</title>
@@ -39,20 +62,6 @@
         <tag>奶牛快传</tag>
         <tag>文件传输</tag>
         <tag>网络在在线传输工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>油猴(Tampermonkey)常用脚本</title>
-    <url>/posts/44e1e43b.html</url>
-    <content><![CDATA[<h2 id="1-什么是油猴"><a href="#1-什么是油猴" class="headerlink" title="1.什么是油猴"></a>1.什么是油猴</h2><p>从英文翻译而来-Tampermonkey是一个捐赠软件用户脚本管理器，可用作浏览器扩展。该软件使用户能够添加和使用用户脚本，这些脚本是可用于修改网页的JavaScript程序</p>
-<h2 id="2-油猴下载地址"><a href="#2-油猴下载地址" class="headerlink" title="2.油猴下载地址"></a>2.油猴下载地址</h2><ul>
-<li><a href="https://www.tampermonkey.net/" target="_blank" rel="noopener">官网下载</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">谷歌商店</a><h2 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h2><h3 id="3-1-批量下载网页图片-Picviewer-CE"><a href="#3-1-批量下载网页图片-Picviewer-CE" class="headerlink" title="3.1 批量下载网页图片 - Picviewer CE+"></a>3.1 批量下载网页图片 - Picviewer CE+</h3><a href="https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce" target="_blank" rel="noopener">Picviewer CE+</a> 是一款浏览器油猴脚本，可以将包含很多图片的网页变成图片浏览器，还能对图片进行翻转、旋转、放大，显示原始大图、收藏、批量保存，聚合所有分页大图，图片在线编辑等操作</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>油猴</tag>
-        <tag>Tampermonkey</tag>
       </tags>
   </entry>
 </search>
