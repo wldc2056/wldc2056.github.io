@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lwblog.xyz/"/>
-  <updated>2020-05-15T06:59:49.314Z</updated>
+  <updated>2020-05-17T14:03:03.028Z</updated>
   <id>http://lwblog.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谷歌云盘折腾记</title>
+    <link href="http://lwblog.xyz/posts/af6fa0b3.html"/>
+    <id>http://lwblog.xyz/posts/af6fa0b3.html</id>
+    <published>2020-05-17T03:17:09.000Z</published>
+    <updated>2020-05-17T14:03:03.028Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="折腾原因"><a href="#折腾原因" class="headerlink" title="折腾原因"></a>折腾原因</h2><p>前段时间由于某些原因，Goindex基于rclone挂载的谷歌云盘在某些原因的情况下不能免科学上网进行访问。这对于我这个大量文件都存放在谷歌云盘上的人来说就有点难受了。毕竟咱是一个无产阶级没有那么多的money进行购买机场流量。只能在茫茫的查找对应的替代品，功夫不负有心人。最终在努力下终于找到一个解决的办法，故此在这里记录一下</p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul><li>能科学上网的环境(准备的情况下需要科学上网)</li><li><a href="https://rclone.org/downloads/" target="_blank" rel="noopener">rclone</a>  <strong>下载安装rclone</strong></li><li><a href="https://www.cloudflare.com/" target="_blank" rel="noopener">CLOUDFLARE</a> <strong>提前注册好账号</strong></li><li><a href="https://install.gd.workers.dev/" target="_blank" rel="noopener">Goindex</a> <strong>现在已经不能用了，原先我就是用的这个</strong></li></ul><h2 id="安装免科学上网访问谷歌云盘"><a href="#安装免科学上网访问谷歌云盘" class="headerlink" title="安装免科学上网访问谷歌云盘"></a>安装免科学上网访问谷歌云盘</h2><p>我是在参考YouTube上大佬小小白的视频进行操作的，这里附上大佬的<a href="https://www.youtube.com/watch?v=oPcb1FZXu5o" target="_blank" rel="noopener">视频链接</a>。各位看官，可以先参考这位大佬的视频进行操作。如果顺利的话就能正常的免科学上网的访问自己的谷歌云盘了。但是，我偏偏是这个不幸中的一人。我按照视频的操作过程中，总是卡在获取谷歌云盘的token验证失败的情况，查了很多资料都没能解决此问题。如果你也遇到这样的问题话，可以参考我的做法。<br>首先，<strong><em>你原先在GoIndex上生成过对应的代码，并且在cloudflare上部署过</em></strong>，下图是我部署代码的部分截图<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevadnpk2xj31o20jetce.jpg" alt=""><br>其次，需要在cloudflare上新建一个worked，将<a href="https://github.com/yanzai/goindex" target="_blank" rel="noopener">这里</a>index.js的代码复制到刚刚新建的worked中，并且将下图中的ID、密钥和token替换成原先使用Goindex生成的代码中的ID、密钥和token。(<strong><em>这里之所以是这样做，是因为使用rclone生成token的时候总是报错</em></strong>)<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevahdci01j31je0u0k1z.jpg" alt=""><br>最后，保存并部署代码就OK了，这样就能再次在不科学上网的情况下继续浏览自己谷歌云盘中的内容了。<br>在这次更新的代码中还有很多的改进，比如可以对不同的文件夹赋予不同的权限，能在进行搜索操作</p><p><strong><em>文章参考：</em></strong></p><ol><li><a href="https://www.youtube.com/watch?v=oPcb1FZXu5o" target="_blank" rel="noopener">小小白大佬的视频</a></li><li><a href="https://xiaoxiaobai.ga/?p=256" target="_blank" rel="noopener">小小白大佬的文档说明</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      对于科学上网流量访问你google driver的捉襟见肘的你，可以进来瞅一瞅
+    
+    </summary>
+    
+    
+      <category term="google" scheme="http://lwblog.xyz/categories/google/"/>
+    
+    
+      <category term="google diriver" scheme="http://lwblog.xyz/tags/google-diriver/"/>
+    
+  </entry>
   
   <entry>
     <title>macbookpro使用技巧</title>

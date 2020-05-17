@@ -28,20 +28,6 @@
       </tags>
   </entry>
   <entry>
-    <title>油猴(Tampermonkey)常用脚本</title>
-    <url>/posts/44e1e43b.html</url>
-    <content><![CDATA[<h2 id="1-什么是油猴"><a href="#1-什么是油猴" class="headerlink" title="1.什么是油猴"></a>1.什么是油猴</h2><p>从英文翻译而来-Tampermonkey是一个捐赠软件用户脚本管理器，可用作浏览器扩展。该软件使用户能够添加和使用用户脚本，这些脚本是可用于修改网页的JavaScript程序</p>
-<h2 id="2-油猴下载地址"><a href="#2-油猴下载地址" class="headerlink" title="2.油猴下载地址"></a>2.油猴下载地址</h2><ul>
-<li><a href="https://www.tampermonkey.net/" target="_blank" rel="noopener">官网下载</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">谷歌商店</a><h2 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h2><h3 id="3-1-批量下载网页图片-Picviewer-CE"><a href="#3-1-批量下载网页图片-Picviewer-CE" class="headerlink" title="3.1 批量下载网页图片 - Picviewer CE+"></a>3.1 批量下载网页图片 - Picviewer CE+</h3><a href="https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce" target="_blank" rel="noopener">Picviewer CE+</a> 是一款浏览器油猴脚本，可以将包含很多图片的网页变成图片浏览器，还能对图片进行翻转、旋转、放大，显示原始大图、收藏、批量保存，聚合所有分页大图，图片在线编辑等操作</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>油猴</tag>
-        <tag>Tampermonkey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macbookpro使用技巧</title>
     <url>/posts/2366fd10.html</url>
     <content><![CDATA[<h2 id="1-mac的隐藏功能"><a href="#1-mac的隐藏功能" class="headerlink" title="1.mac的隐藏功能"></a>1.mac的隐藏功能</h2><ul>
@@ -155,6 +141,44 @@
         <tag>奶牛快传</tag>
         <tag>文件传输</tag>
         <tag>网络在在线传输工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>油猴(Tampermonkey)常用脚本</title>
+    <url>/posts/44e1e43b.html</url>
+    <content><![CDATA[<h2 id="1-什么是油猴"><a href="#1-什么是油猴" class="headerlink" title="1.什么是油猴"></a>1.什么是油猴</h2><p>从英文翻译而来-Tampermonkey是一个捐赠软件用户脚本管理器，可用作浏览器扩展。该软件使用户能够添加和使用用户脚本，这些脚本是可用于修改网页的JavaScript程序</p>
+<h2 id="2-油猴下载地址"><a href="#2-油猴下载地址" class="headerlink" title="2.油猴下载地址"></a>2.油猴下载地址</h2><ul>
+<li><a href="https://www.tampermonkey.net/" target="_blank" rel="noopener">官网下载</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">谷歌商店</a><h2 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h2><h3 id="3-1-批量下载网页图片-Picviewer-CE"><a href="#3-1-批量下载网页图片-Picviewer-CE" class="headerlink" title="3.1 批量下载网页图片 - Picviewer CE+"></a>3.1 批量下载网页图片 - Picviewer CE+</h3><a href="https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce" target="_blank" rel="noopener">Picviewer CE+</a> 是一款浏览器油猴脚本，可以将包含很多图片的网页变成图片浏览器，还能对图片进行翻转、旋转、放大，显示原始大图、收藏、批量保存，聚合所有分页大图，图片在线编辑等操作</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>油猴</tag>
+        <tag>Tampermonkey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谷歌云盘折腾记</title>
+    <url>/posts/af6fa0b3.html</url>
+    <content><![CDATA[<h2 id="折腾原因"><a href="#折腾原因" class="headerlink" title="折腾原因"></a>折腾原因</h2><p>前段时间由于某些原因，Goindex基于rclone挂载的谷歌云盘在某些原因的情况下不能免科学上网进行访问。这对于我这个大量文件都存放在谷歌云盘上的人来说就有点难受了。毕竟咱是一个无产阶级没有那么多的money进行购买机场流量。只能在茫茫的查找对应的替代品，功夫不负有心人。最终在努力下终于找到一个解决的办法，故此在这里记录一下</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
+<li>能科学上网的环境(准备的情况下需要科学上网)</li>
+<li><a href="https://rclone.org/downloads/" target="_blank" rel="noopener">rclone</a>  <strong>下载安装rclone</strong></li>
+<li><a href="https://www.cloudflare.com/" target="_blank" rel="noopener">CLOUDFLARE</a> <strong>提前注册好账号</strong></li>
+<li><a href="https://install.gd.workers.dev/" target="_blank" rel="noopener">Goindex</a> <strong>现在已经不能用了，原先我就是用的这个</strong></li>
+</ul>
+<h2 id="安装免科学上网访问谷歌云盘"><a href="#安装免科学上网访问谷歌云盘" class="headerlink" title="安装免科学上网访问谷歌云盘"></a>安装免科学上网访问谷歌云盘</h2><p>我是在参考YouTube上大佬小小白的视频进行操作的，这里附上大佬的<a href="https://www.youtube.com/watch?v=oPcb1FZXu5o" target="_blank" rel="noopener">视频链接</a>。各位看官，可以先参考这位大佬的视频进行操作。如果顺利的话就能正常的免科学上网的访问自己的谷歌云盘了。但是，我偏偏是这个不幸中的一人。我按照视频的操作过程中，总是卡在获取谷歌云盘的token验证失败的情况，查了很多资料都没能解决此问题。如果你也遇到这样的问题话，可以参考我的做法。<br>首先，<strong><em>你原先在GoIndex上生成过对应的代码，并且在cloudflare上部署过</em></strong>，下图是我部署代码的部分截图<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevadnpk2xj31o20jetce.jpg" alt=""><br>其次，需要在cloudflare上新建一个worked，将<a href="https://github.com/yanzai/goindex" target="_blank" rel="noopener">这里</a>index.js的代码复制到刚刚新建的worked中，并且将下图中的ID、密钥和token替换成原先使用Goindex生成的代码中的ID、密钥和token。(<strong><em>这里之所以是这样做，是因为使用rclone生成token的时候总是报错</em></strong>)<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevahdci01j31je0u0k1z.jpg" alt=""><br>最后，保存并部署代码就OK了，这样就能再次在不科学上网的情况下继续浏览自己谷歌云盘中的内容了。<br>在这次更新的代码中还有很多的改进，比如可以对不同的文件夹赋予不同的权限，能在进行搜索操作</p>
+<p><strong><em>文章参考：</em></strong></p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=oPcb1FZXu5o" target="_blank" rel="noopener">小小白大佬的视频</a></li>
+<li><a href="https://xiaoxiaobai.ga/?p=256" target="_blank" rel="noopener">小小白大佬的文档说明</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>google</category>
+      </categories>
+      <tags>
+        <tag>google diriver</tag>
       </tags>
   </entry>
 </search>
