@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lwblog.xyz/"/>
-  <updated>2020-05-17T14:03:03.028Z</updated>
+  <updated>2020-05-18T01:15:21.103Z</updated>
   <id>http://lwblog.xyz/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谷歌浏览器调试技巧</title>
+    <link href="http://lwblog.xyz/posts/4cc93b7c.html"/>
+    <id>http://lwblog.xyz/posts/4cc93b7c.html</id>
+    <published>2020-05-18T01:14:32.000Z</published>
+    <updated>2020-05-18T01:15:21.103Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="google" scheme="http://lwblog.xyz/categories/google/"/>
+    
+    
+      <category term="调试" scheme="http://lwblog.xyz/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>谷歌云盘折腾记</title>
@@ -63,29 +82,6 @@
   </entry>
   
   <entry>
-    <title>sqlserver数据库还原单表数据操作</title>
-    <link href="http://lwblog.xyz/posts/4a17b156.html"/>
-    <id>http://lwblog.xyz/posts/4a17b156.html</id>
-    <published>2020-05-08T14:53:07.000Z</published>
-    <updated>2020-05-15T02:45:06.117Z</updated>
-    
-    <content type="html"><![CDATA[<p>在系统数据和数据库数据备份或者升级的时候，我们总是全量的备份应用或者数据。在升级完成使用一段时间后突然间发现某张表的数据有问题，此时在全部的还原数据库的数据则不太合理，那如何只还原出现问题的这张表的数据呢？</p><p>首先，我们需要将升级时全量备份的数据库还原成一个新的数据库，如何还原一个新的数据库，此处不在赘述，网上有好多。自我感觉还是参考<a href="https://docs.microsoft.com/zh-cn/sql/relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server?view=sql-server-ver15" target="_blank" rel="noopener">sqlserver官方的还原说明</a>或者参考<a href="https://www.jianshu.com/p/a153c20a577d?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">SQL Server从BAK文件还原到新数据库</a></p><p>之后，我们选择刚刚还原完成的数据库使用如下的命令将ecology.dbo.hrmresource 所有的数据导入到demo.dbo.hrmresource_Test中<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxhysb3zj31hx0u0n7s.jpg" alt=""></p><p>选中刚刚还原的数据库，执行如下的sql语句，执行完成后刷新可以看到demo中已经出现了需要还原的表单数据</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">into</span> demo.dbo.hrmresource_test <span class="keyword">From</span> ecology.dbo.hrmresource</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxkucf1wj319e0u0x5l.jpg" alt=""></p><p>两张表单对比,我这里的表单中没有数据，但是可以看到需要还原的demo库中对应的表单结构已经有了</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxp4rmjgj318s0u01kx.jpg" alt="ecology"></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxr7mbkxj31670u01kx.jpg" alt="demo库"></p><p>最后，我们使用下列命令将原来的表进行删除，并把HtmlLabelInfo_Test 重命名为HtmlLabelInfo</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//删除原有的表单,此处我的里边没有对用的表单,就没有执行这一步</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [dbo].[Hrmresource]</span><br><span class="line">//表单重命名,或者在ssms操作工具中直接在actionsetting_test上摁下F2进行表单重命名</span><br><span class="line">EXEC sp_rename <span class="string">'Hrmresource_test'</span>,<span class="string">'Hrmresource'</span></span><br></pre></td></tr></table></figure><p>或者是在navicat中可以直接右键选择重命名，对表单的名称进行更改</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxs79m9wj30w20u07wh.jpg" alt=""></p><p>至此,在全量备份的情况下即可还原某一张表的数据。</p>]]></content>
-    
-    <summary type="html">
-    
-      sqlserver数据库通过全备份还原某张表数据
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://lwblog.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="sqlserver" scheme="http://lwblog.xyz/tags/sqlserver/"/>
-    
-  </entry>
-  
-  <entry>
     <title>网络在在线传输工具 --- 奶牛快传</title>
     <link href="http://lwblog.xyz/posts/994d00c4.html"/>
     <id>http://lwblog.xyz/posts/994d00c4.html</id>
@@ -109,6 +105,29 @@
       <category term="文件传输" scheme="http://lwblog.xyz/tags/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93/"/>
     
       <category term="网络在在线传输工具" scheme="http://lwblog.xyz/tags/%E7%BD%91%E7%BB%9C%E5%9C%A8%E5%9C%A8%E7%BA%BF%E4%BC%A0%E8%BE%93%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sqlserver数据库还原单表数据操作</title>
+    <link href="http://lwblog.xyz/posts/4a17b156.html"/>
+    <id>http://lwblog.xyz/posts/4a17b156.html</id>
+    <published>2020-05-08T14:53:07.000Z</published>
+    <updated>2020-05-15T02:45:06.117Z</updated>
+    
+    <content type="html"><![CDATA[<p>在系统数据和数据库数据备份或者升级的时候，我们总是全量的备份应用或者数据。在升级完成使用一段时间后突然间发现某张表的数据有问题，此时在全部的还原数据库的数据则不太合理，那如何只还原出现问题的这张表的数据呢？</p><p>首先，我们需要将升级时全量备份的数据库还原成一个新的数据库，如何还原一个新的数据库，此处不在赘述，网上有好多。自我感觉还是参考<a href="https://docs.microsoft.com/zh-cn/sql/relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server?view=sql-server-ver15" target="_blank" rel="noopener">sqlserver官方的还原说明</a>或者参考<a href="https://www.jianshu.com/p/a153c20a577d?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation" target="_blank" rel="noopener">SQL Server从BAK文件还原到新数据库</a></p><p>之后，我们选择刚刚还原完成的数据库使用如下的命令将ecology.dbo.hrmresource 所有的数据导入到demo.dbo.hrmresource_Test中<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxhysb3zj31hx0u0n7s.jpg" alt=""></p><p>选中刚刚还原的数据库，执行如下的sql语句，执行完成后刷新可以看到demo中已经出现了需要还原的表单数据</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">into</span> demo.dbo.hrmresource_test <span class="keyword">From</span> ecology.dbo.hrmresource</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxkucf1wj319e0u0x5l.jpg" alt=""></p><p>两张表单对比,我这里的表单中没有数据，但是可以看到需要还原的demo库中对应的表单结构已经有了</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxp4rmjgj318s0u01kx.jpg" alt="ecology"></p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxr7mbkxj31670u01kx.jpg" alt="demo库"></p><p>最后，我们使用下列命令将原来的表进行删除，并把HtmlLabelInfo_Test 重命名为HtmlLabelInfo</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//删除原有的表单,此处我的里边没有对用的表单,就没有执行这一步</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [dbo].[Hrmresource]</span><br><span class="line">//表单重命名,或者在ssms操作工具中直接在actionsetting_test上摁下F2进行表单重命名</span><br><span class="line">EXEC sp_rename <span class="string">'Hrmresource_test'</span>,<span class="string">'Hrmresource'</span></span><br></pre></td></tr></table></figure><p>或者是在navicat中可以直接右键选择重命名，对表单的名称进行更改</p><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gesxs79m9wj30w20u07wh.jpg" alt=""></p><p>至此,在全量备份的情况下即可还原某一张表的数据。</p>]]></content>
+    
+    <summary type="html">
+    
+      sqlserver数据库通过全备份还原某张表数据
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="http://lwblog.xyz/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="sqlserver" scheme="http://lwblog.xyz/tags/sqlserver/"/>
     
   </entry>
   
