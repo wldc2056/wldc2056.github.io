@@ -10,7 +10,7 @@
 
 <title>
     
-    书单 |
+    这是我新建的一个文件 |
     
     你的网站名称xxx</title>
 <!--end title-->
@@ -23,7 +23,7 @@
 
 <!--end mete-->
 <!--begin keywords-->
-<meta name="keywords" content="书单"/>
+<meta name="keywords" content="这是我新建的一个文件"/>
 <!--end keywords-->
 <!--begin rss-->
 
@@ -223,7 +223,7 @@
             
             <i class="fh fh-newspaper-o" aria-hidden="true"></i>
             
-            书单
+            这是我新建的一个文件
         </li>
         
     </ul>
@@ -240,10 +240,19 @@
 </div>
             <!--end breadcrumb-->
             <!--begin body-->
-            
-<article id="page">
-  <h1>书单</h1>
-  
+            <article class="post animated rollIn">
+    <h1 class="post-title">这是我新建的一个文件</h1>
+    <div class="post-subtitle">
+        
+        <time datetime="2020-05-22T08:38:49.000Z" class="item">
+            <i class="fh fh-calendar" aria-hidden="true"></i>&nbsp;&nbsp;2020-05-22
+        </time>
+        
+        
+        
+    </div>
+    
+    
 </article>
 
 <div class="animated bounceInDown paginations">
@@ -270,6 +279,53 @@
             <!--end body-->
             <!--begin comments-->
             
+<div class="comments">
+    
+
+    
+    
+<div id="gitalk-container">
+</div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script>
+    var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document
+            .documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+            if (window.attachEvent) {
+                b.onreadystatechange = function () {
+                    var e = b.readyState;
+                    if (e === "loaded" || e === "complete") {
+                        b.onreadystatechange = null;
+                        a()
+                    }
+                }
+            } else {
+                b.onload = a
+            }
+        }
+        c.appendChild(b)
+    };
+    loadJs("https://unpkg.com/gitalk/dist/gitalk.min.js", function () {
+        var gitalk = new Gitalk({
+            clientID: 'e82b50d554e32a851ae7',
+            clientSecret: '95923aeaddb44e6de22d088703c6bbde978f505c',
+            repo: 'objectyan.github.io',
+            owner: 'objectyan',
+            admin: ['objectyan'],
+            id: decodeURIComponent(location.pathname),
+            distractionFreeMode: false
+        })
+
+        gitalk.render('gitalk-container')
+    });
+</script>
+
+</div>
+
 
             <!--end comments-->
         </div>
